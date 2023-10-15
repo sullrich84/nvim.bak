@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "catppuccin",
-  theme_toggle = { "catppuccin" },
+  theme = "nightfox",
+  theme_toggle = { "nightfox" },
 
   statusline = {
     theme = "vscode_colored",
@@ -15,7 +15,7 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
 
     header = {
       "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣤⣴⡶⠖⢀⣀⣤⣤⣤⣀      ",
