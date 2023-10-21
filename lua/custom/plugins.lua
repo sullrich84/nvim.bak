@@ -46,6 +46,11 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+
+  {
+    "tpope/vim-speeddating",
+    lazy = false,
+  },
 }
 
 return plugins
