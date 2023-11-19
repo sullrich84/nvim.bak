@@ -23,6 +23,7 @@ local plugins = {
   },
 
   -- override plugin configs
+
   {
     "williamboman/mason.nvim",
     opts = overrides.mason
@@ -38,7 +39,13 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
+  -- Install custom plugins 
+
+  "NvChad/nvcommunity",
+  { import = "nvcommunity.git.lazygit" },
+  { import = "nvcommunity.motion.bookmarks" },
+  { import = "nvcommunity.editor.autosave" },
+
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -51,6 +58,76 @@ local plugins = {
     "tpope/vim-speeddating",
     lazy = false,
   },
+
+  {
+    "sagarrakshe/toggle-bool",
+    lazy = false,
+  },
+
+  {
+    "glepnir/dashboard-nvim",
+    event = "VimEnter",
+    opts = {
+      theme = "hyper",
+      config = {
+        header = {
+          "",
+          "",
+          "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣤⣴⡶⠖⢀⣀⣤⣤⣤⣀      ",
+          " ⠀⠀⠀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⠛⣡⣴⣾⣿⣿⣿⣿⣿⣿⣷⡀   ",
+          " ⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧   ",
+          " ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⢻⣿⣿⣿⣿⠟⣉⠻⣿⣶⣿⡄  ",
+          " ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⢿⣿⣿⣿⡀⠻⣷⣌⠙⢿⣧  ",
+          " ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⡙⠻⠿⠁⠀⠈⠙⠳⢄⡉  ",
+          " ⠸⢸⣿⣿⣿⣿⣿⡿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣟⠀⠀⢀⣀⠀⠀⠀⣤⣈  ",
+          " ⠀⠘⣿⣿⣿⣿⠋⠐⠿⠿⠿⠿⢃⠘⣿⣿⣿⣿⠀⢰⣿⡟⠀⠀⣰⣿⡟  ",
+          " ⠀⠀⣿⣿⣿⣿⠀⣿⣿⡆⠀⠀⣾⠀⣿⣿⣿⣿⠀⠈⠻⣿⣿⣿⣿⡿⠁  ",
+          " ⠀⠀⣿⣿⣿⣿⠀⣿⣿⣷⠀⠀⣿⡆⢸⣿⣿⣿⠀⠀⠀⠀⠉⠉⠁    ",
+          " ⠀⠀⠛⠿⠿⠃⠀⠻⠿⠋⠀⠀⠻⠇⠘⠿⠿⠟⠀sully.vim ",
+          "",
+        },
+        week_header = {
+          enable = false,
+        },
+        shortcut = {
+          { icon = " ",  desc = "Projects", group = "@label",   action = "Telescope project",    key = "p", },
+          { icon = " ",  desc = "Recent",   group = "@label",   action = "Telescope oldfiles",   key = "r", },
+          { icon = " ",  desc = "Grep",     group = "Number",   action = "Telescope live_grep",  key = "g", },
+          { icon = "󰍉 ", desc = "Find",     group = "Number",   action = "Telescope find_files", key = "f", },
+          { icon = " ",  desc = "Config",   group = "@comment", action = "e $MYVIMRC",           key = "c", },
+          { icon = " ",  desc = "Update",   group = "@comment", action = "Lazy update",          key = "u" },
+          { icon = "󰛯 ", desc = "Health",   group = "@comment", action = "checkhealth",          key = "h", },
+          { icon = "󰩈 ", desc = "Quit",     group = "@error",   action = "qa",                   key = "q", },
+        },
+        packages = {
+          enabled = false
+        },
+        project = {
+          enable = true,
+          limit = 8,
+          icon = " ",
+          label = " Recent Projects:",
+          action = "Telescope find_files cwd="
+        },
+        mru = {
+          enable = true,
+          limit = 8,
+          icon = " ",
+          label = " Recent files:",
+        },
+        footer = function()
+          local stats = require("lazy").stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+          local footer = "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+          return { "", footer }
+        end,
+      },
+    },
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" }
+    }
+  },
+
 }
 
 return plugins
