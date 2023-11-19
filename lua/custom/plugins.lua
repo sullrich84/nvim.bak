@@ -43,7 +43,6 @@ local plugins = {
 
   "NvChad/nvcommunity",
   { import = "nvcommunity.git.lazygit" },
-  { import = "nvcommunity.motion.bookmarks" },
   { import = "nvcommunity.editor.autosave" },
 
   {
@@ -65,7 +64,13 @@ local plugins = {
   },
 
   {
-    "glepnir/dashboard-nvim",
+    "ThePrimeagen/harpoon",
+    lazy = false,
+    cmd = "Harpoon",
+  },
+
+  {
+    "nvimdev/dashboard-nvim",
     event = "VimEnter",
     opts = {
       theme = "hyper",
@@ -90,14 +95,14 @@ local plugins = {
           enable = false,
         },
         shortcut = {
-          { icon = " ",  desc = "Projects", group = "@label",   action = "Telescope project",    key = "p", },
-          { icon = " ",  desc = "Recent",   group = "@label",   action = "Telescope oldfiles",   key = "r", },
+          { icon = " ",  desc = "Projects", group = "Question",   action = "Telescope project",    key = "p", },
+          { icon = " ",  desc = "Recent",   group = "Question",   action = "Telescope oldfiles",   key = "r", },
           { icon = " ",  desc = "Grep",     group = "Number",   action = "Telescope live_grep",  key = "g", },
-          { icon = "󰍉 ", desc = "Find",     group = "Number",   action = "Telescope find_files", key = "f", },
+          { icon = "󰍉 ",  desc = "Find",     group = "Number",   action = "Telescope find_files", key = "f", },
           { icon = " ",  desc = "Config",   group = "@comment", action = "e $MYVIMRC",           key = "c", },
           { icon = " ",  desc = "Update",   group = "@comment", action = "Lazy update",          key = "u" },
-          { icon = "󰛯 ", desc = "Health",   group = "@comment", action = "checkhealth",          key = "h", },
-          { icon = "󰩈 ", desc = "Quit",     group = "@error",   action = "qa",                   key = "q", },
+          { icon = "󰛯 ",  desc = "Health",   group = "@comment", action = "checkhealth",          key = "h", },
+          { icon = "󰩈 ",  desc = "Quit",     group = "@error",   action = "qa",                   key = "q", },
         },
         packages = {
           enabled = false
