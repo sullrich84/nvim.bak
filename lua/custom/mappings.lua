@@ -22,7 +22,7 @@ M.lazygit = {
 
 M.nvimtree = {
   n = {
-    ["<leader>e"] = { ":NvimTreeToggle <CR>", "Open LazyGit" },
+    ["<leader>e"] = { ":NvimTreeToggle <CR>", "Open LazyGit", opts = { silent = true } },
   },
 }
 
