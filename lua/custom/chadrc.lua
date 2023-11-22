@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "nightfox",
-  theme_toggle = { "nightfox" },
+  theme_toggle = { "nightfox", "one_light" },
 
   statusline = {
     theme = "vscode_colored",
