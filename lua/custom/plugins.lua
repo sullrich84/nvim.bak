@@ -33,14 +33,8 @@ local plugins = {
   },
 
   "NvChad/nvcommunity",
-
-  {
-    import = "nvcommunity.git.lazygit",
-  },
-
-  {
-    import = "nvcommunity.editor.autosave",
-  },
+  { import = "nvcommunity.git.lazygit" },
+  { import = "nvcommunity.editor.autosave" },
 
   {
     "max397574/better-escape.nvim",
