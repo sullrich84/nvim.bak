@@ -4,6 +4,7 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<D-s>"] = { ":w <CR>", "Save" },
+    ["<esc>"] = { ":noh <CR>", "Clear history", opts = {silent = true}}
   },
   v = {
     [">"] = { ">gv", "indent" },
