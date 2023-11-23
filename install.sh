@@ -29,7 +29,7 @@ rm -rf ~/.local/share/nvim || true
 
 # Backup old config
 mv $TARGET $TARGET.$TIMESTAMP
-echo "Your config has been backed up at $TARGET!"
+echo "Your config has been backed up at $TARGET.$TIMESTAMP!"
 
 # Checkout configuration
 git clone $REPOSITORY --depth 1 $TARGET
