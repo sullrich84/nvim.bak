@@ -1,15 +1,10 @@
-# nvim
-My personal nvim configuration
+# sully.vim
+My personal `nvim` configuration based on NvChad.
+
+## Installation
+
+You can install my `nvim` configuration by running the following command:
 
 ```
-# Linux / Macos (unix)
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-
-# Windows
-rd -r ~\AppData\Local\nvim
-rd -r ~\AppData\Local\nvim-data
-
-# Install
-git clone https://github.com/sullrich84/nvim ~/.config/nvim --depth 1 && nvim
+curl https://raw.githubusercontent.com/sullrich84/nvim/main/install.sh | bash && nvim
 ```
