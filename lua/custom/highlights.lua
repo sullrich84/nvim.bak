@@ -21,7 +21,7 @@ M.add = {
   DashboardProjectTitleIcon = { fg = "gray" },
   DashboardProjectIcon = { fg = "gray" },
   DashboardMruTitle = { fg = "gray" },
-  DashboardMruIcon = { fg = "gray"},  
+  DashboardMruIcon = { fg = "gray" },
 }
 
 return M
