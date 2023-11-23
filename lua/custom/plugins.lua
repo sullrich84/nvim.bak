@@ -87,11 +87,11 @@ local plugins = {
         },
         shortcut = {
           { icon = " ", desc = "Projects", group = "Question", action = "Telescope project", key = "p" },
-          { icon = " ", desc = "Recent", group = "Question", action = "Telescope oldfiles", key = "r" },
+          { icon = "󰋚 ", desc = "Recent", group = "Question", action = "Telescope oldfiles", key = "r" },
           { icon = " ", desc = "Grep", group = "Number", action = "Telescope live_grep", key = "g" },
           { icon = "󰍉 ", desc = "Find", group = "Number", action = "Telescope find_files", key = "f" },
           { icon = " ", desc = "Config", group = "@comment", action = "e $MYVIMRC", key = "c" },
-          { icon = " ", desc = "Update", group = "@comment", action = "Lazy update", key = "u" },
+          { icon = "󰚰 ", desc = "Update", group = "@comment", action = "Lazy update", key = "u" },
           { icon = "󰛯 ", desc = "Health", group = "@comment", action = "checkhealth", key = "h" },
           { icon = "󰩈 ", desc = "Quit", group = "@error", action = "qa", key = "q" },
         },
@@ -108,7 +108,7 @@ local plugins = {
         mru = {
           enable = true,
           limit = 8,
-          icon = " ",
+          icon = "󰋚 ",
           label = " Recent files:",
         },
         footer = function()

@@ -4,16 +4,24 @@
 
 local M = {}
 
----@type Base46HLGroupsList
 M.override = {
   Comment = {
     italic = true,
   },
 }
 
----@type HLTable
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  --NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  DashboardHeader = { fg = "gray" },
+  DashboardFooter = { fg = "gray" },
+  DashboardShortCutIcon = { fg = "gray" },
+  DashboardFiles = { fg = "gray" },
+  ---
+  DashboardProjectTitle = { fg = "gray" },
+  DashboardProjectTitleIcon = { fg = "gray" },
+  DashboardProjectIcon = { fg = "gray" },
+  DashboardMruTitle = { fg = "gray" },
+  DashboardMruIcon = { fg = "gray"},  
 }
 
 return M
