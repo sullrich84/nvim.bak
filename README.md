@@ -2,7 +2,6 @@
 My personal `nvim` configuration based on NvChad.
 
 ## Installation
-
 You can install my `nvim` configuration by running the following command:
 
 ```
