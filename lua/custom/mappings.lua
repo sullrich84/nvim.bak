@@ -11,7 +11,17 @@ M.general = {
     ["<D-s>"] = { ":w <CR>", "Save", opts = { silent = true } },
   },
   i = {
-    ["<C-s>"] = { ":w <CR>", "Save", opts = { silent = true } },
+    ["<C-s>"] = { "<esc>:w <CR>", "Save", opts = { silent = true } },
+  },
+}
+
+M.telescope = {
+  n = {
+    ["<leader>tp"] = {
+      ":lua require'telescope'.extensions.project.project{}<CR>",
+      "Open projects view",
+      opts = { noremap = true, silent = true },
+    },
   },
 }
 
