@@ -18,6 +18,22 @@ local plugins = {
   },
 
   {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "jvgrootveld/telescope-zoxide",
+      "nvim-telescope/telescope-project.nvim",
+    },
+    opts = {
+      extensions_list = { "themes", "terms", "zoxide", "project" },
+      extensions = {
+        zoxide = {
+          prompt_title = "[ Walking on the shoulders of TJ ]",
+        },
+      },
+    },
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
