@@ -41,6 +41,7 @@ M.ui = {
   n = {
     ["<leader>ul"] = { ":set norelativenumber number <CR>", "Toggle number", opts = { silent = true } },
     ["<leader>uL"] = { ":set nonumber relativenumber <CR>", "Toggle relative number", opts = { silent = true } },
+    ["<leader>tr"] = { ":theme nightfox <CR>", "Reset theme", opts = { silent = true } },
   },
 }
 
