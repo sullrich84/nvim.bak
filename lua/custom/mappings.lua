@@ -1,5 +1,13 @@
 local M = {}
 
+M.reset = {
+  n = {
+    ["<C-n>"] = { "" },
+    ["s"] = { "" },
+    ["S"] = { "" },
+  },
+}
+
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },

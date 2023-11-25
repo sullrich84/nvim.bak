@@ -34,6 +34,21 @@ local plugins = {
   },
 
   {
+    "jacquesbh/vim-showmarks",
+    lazy = false,
+  },
+
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+  },
+
+  {
+    "tpope/vim-surround",
+    lazy = false,
+  },
+
+  {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
