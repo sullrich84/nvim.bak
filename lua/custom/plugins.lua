@@ -34,11 +34,6 @@ local plugins = {
   },
 
   {
-    "jacquesbh/vim-showmarks",
-    lazy = false,
-  },
-
-  {
     "mg979/vim-visual-multi",
     lazy = false,
   },
