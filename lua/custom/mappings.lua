@@ -13,6 +13,7 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<D-s>"] = { ":w <CR>", "Save" },
     ["<esc>"] = { ":noh <CR>", "Clear history", opts = { silent = true } },
+    ["<leader>r"] = { ":Switch <CR>", opts = { noremap = true, silent = true } },
   },
   v = {
     [">"] = { ">gv", "indent", opts = { silent = true } },

@@ -39,6 +39,11 @@ local plugins = {
   },
 
   {
+    "AndrewRadev/switch.vim",
+    lazy = false,
+  },
+
+  {
     "tpope/vim-surround",
     lazy = false,
   },
@@ -73,17 +78,6 @@ local plugins = {
   {
     "tpope/vim-speeddating",
     lazy = false,
-  },
-
-  {
-    "sagarrakshe/toggle-bool",
-    lazy = false,
-  },
-
-  {
-    "ThePrimeagen/harpoon",
-    lazy = false,
-    cmd = "Harpoon",
   },
 
   {
