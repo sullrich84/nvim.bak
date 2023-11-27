@@ -1,4 +1,4 @@
-local overrides = require "custom.configs.overrides"
+-- local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
@@ -20,11 +20,10 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "jvgrootveld/telescope-zoxide",
       "nvim-telescope/telescope-project.nvim",
     },
     opts = {
-      extensions_list = { "themes", "terms", "zoxide", "project" },
+      extensions_list = { "themes", "terms", "project" },
       extensions = {
         zoxide = {
           prompt_title = "[ Walking on the shoulders of TJ ]",
@@ -34,39 +33,17 @@ local plugins = {
   },
 
   {
-    "mg979/vim-visual-multi",
-    lazy = false,
+    "chrisgrieser/nvim-alt-substitute",
+    event = "CmdlineEnter",
+    opts = true,
   },
 
-  {
-    "AndrewRadev/switch.vim",
-    lazy = false,
-  },
-
-  {
-    "AndrewRadev/sideways.vim",
-    lazy = false,
-  },
-
-  {
-    "tpope/vim-surround",
-    lazy = false,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+  { "tommcdo/vim-exchange", lazy = false },
+  { "mg979/vim-visual-multi", lazy = false },
+  { "AndrewRadev/switch.vim", lazy = false },
+  { "AndrewRadev/sideways.vim", lazy = false },
+  { "tpope/vim-surround", lazy = false },
+  { "tpope/vim-speeddating", lazy = false },
 
   "NvChad/nvcommunity",
   { import = "nvcommunity.git.lazygit" },
@@ -78,11 +55,6 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
-  },
-
-  {
-    "tpope/vim-speeddating",
-    lazy = false,
   },
 
   {
