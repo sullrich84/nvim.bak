@@ -1,19 +1,9 @@
 local M = {}
 
-M.reset = {
-  n = {
-    ["<C-n>"] = { "" },
-    ["s"] = { "" },
-    ["S"] = { "" },
-  },
-}
-
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<D-s>"] = { ":w <CR>", "Save" },
-    ["<esc>"] = { ":noh <CR>", "Clear history", opts = { silent = true } },
-    ["<leader>r"] = { ":Switch <CR>", opts = { noremap = true, silent = true } },
+    ["<C-n>"] = { "" },
+    ["S"] = { "" },
   },
   v = {
     [">"] = { ">gv", "indent", opts = { silent = true } },
@@ -46,11 +36,24 @@ M.nvimtree = {
   },
 }
 
-M.ui = {
+M.switch = {
   n = {
-    ["<leader>ul"] = { ":set norelativenumber number <CR>", "Toggle number", opts = { silent = true } },
-    ["<leader>uL"] = { ":set nonumber relativenumber <CR>", "Toggle relative number", opts = { silent = true } },
-    ["<leader>tr"] = { ":theme nightfox <CR>", "Reset theme", opts = { silent = true } },
+    ["<leader>cs"] = { ":Switch <CR>", opts = { silent = true } },
+  },
+}
+
+M.sideways = {
+  n = {
+    ["<leader>cj"] = { ":SidewaysLeft <CR>", "Move param under cursor left", opts = { silent = true } },
+    ["<leader>cl"] = { ":SidewaysRight <CR>", "Move param under cursor right", opts = { silent = true } },
+  },
+  o = {
+    ["aa"] = { "<Plug>SidewaysArgumentTextobjA", "Argument under cursor" },
+    ["ia"] = { "<Plug>SidewaysArgumentTextobjI", "Argument under cursor" },
+  },
+  x = {
+    ["aa"] = { "<Plug>SidewaysArgumentTextobjA", "Argument under cursor" },
+    ["ia"] = { "<Plug>SidewaysArgumentTextobjI", "Argument under cursor" },
   },
 }
 
