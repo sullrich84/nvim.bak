@@ -40,6 +40,7 @@ local plugins = {
 
   {
     -- TODO: Remap this to <leader> cs!
+    -- TODO: Disable default mapping!
     "AndrewRadev/switch.vim",
     lazy = false,
     enable = true,
