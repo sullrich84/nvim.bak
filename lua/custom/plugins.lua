@@ -39,8 +39,13 @@ local plugins = {
   },
 
   {
+    -- TODO: Remap this to <leader> cs!
     "AndrewRadev/switch.vim",
     lazy = false,
+    enable = true,
+    setup = function()
+      vim.g.switch_mapping = ""
+    end,
   },
 
   {
