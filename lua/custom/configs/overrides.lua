@@ -40,9 +40,6 @@ M.mason = {
 
     -- shell
     "shfmt",
-
-    -- general stuff
-    "spellcheck",
   },
 }
 
