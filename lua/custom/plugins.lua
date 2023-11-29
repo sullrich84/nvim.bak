@@ -58,6 +58,11 @@ local plugins = {
   },
 
   {
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+  },
+
+  {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     opts = {
