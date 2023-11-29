@@ -58,6 +58,14 @@ local plugins = {
   },
 
   {
+    "jghauser/kitty-runner.nvim",
+    lazy = false,
+    config = function()
+      require("kitty-runner").setup()
+    end,
+  },
+
+  {
     "weilbith/nvim-code-action-menu",
     cmd = "CodeActionMenu",
   },
