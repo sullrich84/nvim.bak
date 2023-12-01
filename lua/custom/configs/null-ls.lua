@@ -5,6 +5,7 @@ local b = null_ls.builtins
 local sources = {
   b.formatting.deno_fmt.with {
     root_dir = u.root_pattern("deno.json", "deno.jsonc"),
+    extra_args = { "--no-semicolons" },
     condition = function(utils)
       return utils.root_has_file { "deno.json", "deno.jsonc" }
     end,
