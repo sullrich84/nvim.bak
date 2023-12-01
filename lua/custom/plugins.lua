@@ -39,7 +39,6 @@ local plugins = {
   },
 
   { "tommcdo/vim-exchange", lazy = false },
-  { "mg979/vim-visual-multi", lazy = false },
   { "AndrewRadev/switch.vim", lazy = false },
   { "AndrewRadev/sideways.vim", lazy = false },
   { "tpope/vim-surround", lazy = false },

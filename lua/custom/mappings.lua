@@ -38,7 +38,7 @@ M.nvimtree = {
 
 M.switch = {
   n = {
-    ["<leader>cs"] = { ":Switch <CR>", opts = { silent = true } },
+    ["S"] = { ":Switch <CR>", opts = { silent = true } },
   },
 }
 
