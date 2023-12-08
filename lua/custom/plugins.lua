@@ -21,9 +21,10 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-project.nvim",
+      "nvim-telescope/telescope-dap.nvim",
     },
     opts = {
-      extensions_list = { "themes", "terms", "project" },
+      extensions_list = { "themes", "terms", "project", "dap" },
       extensions = {
         zoxide = {
           prompt_title = "[ Walking on the shoulders of TJ ]",
@@ -43,10 +44,88 @@ local plugins = {
   { "AndrewRadev/sideways.vim", lazy = false },
   { "tpope/vim-surround", lazy = false },
   { "tpope/vim-speeddating", lazy = false },
+  { "luochen1990/rainbow", lazy = false },
 
   "NvChad/nvcommunity",
   { import = "nvcommunity.git.lazygit" },
   { import = "nvcommunity.editor.autosave" },
+
+  -- DAP
+  {
+    "mfussenegger/nvim-dap",
+    lazy = false,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "mxsdev/nvim-dap-vscode-js",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      -- require "plugins.dap"
+      local dap = require "dap"
+      local dapui = require "dapui"
+
+      -- Add listeners to automatically open and close dapui
+      dapui.setup()
+
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open {}
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close {}
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close {}
+      end
+
+      -- vscode-js-debug (js-debug-adapter in Mason)
+      require("dap-vscode-js").setup {
+        debugger_path = vim.fn.stdpath "data" .. "/mason/packages/js-debug-adapter",
+        debugger_cmd = { "js-debug-adapter" },
+        adapters = {
+          "pwa-node",
+          "pwa-chrome",
+          "pwa-msedge",
+          "node-terminal",
+          "pwa-extensionHost",
+        },
+      }
+
+      -- add configuration for typescript and javascript
+      for _, language in ipairs { "typescript", "javascript" } do
+        dap.configurations[language] = {
+          {
+            name = "Deno launch",
+            request = "launch",
+            type = "pwa-node",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
+            -- runtimeArgs = { "run", "--inspect-brk" },
+            runtimeArgs = { "run", "--inspect=127.0.0.1:9229", "--allow-all" },
+            attachSimplePort = 9229,
+          },
+          {
+            name = "Deno attach",
+            request = "attach",
+            type = "pwa-node",
+            processId = require("dap.utils").pick_process,
+            cwd = "${workspaceFolder}",
+            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
+          },
+          {
+            name = "Deno launch ?",
+            request = "launch",
+            type = "pwa-node",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
+            runtimeArgs = { "run", "--inspect-brk" },
+            attachSimplePort = 9229,
+          },
+        }
+      end
+    end,
+  },
 
   {
     "max397574/better-escape.nvim",
