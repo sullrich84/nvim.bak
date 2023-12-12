@@ -90,6 +90,16 @@ local plugins = {
         },
       }
 
+      dap.adapters["pwa-node"] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "node",
+          args = { "/Users/sullrich/Downloads/js-debug/src/dapDebugServer.js", "${port}" },
+        },
+      }
+
       -- add configuration for typescript and javascript
       for _, language in ipairs { "typescript", "javascript" } do
         dap.configurations[language] = {
@@ -100,26 +110,11 @@ local plugins = {
             program = "${file}",
             cwd = "${workspaceFolder}",
             runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
-            -- runtimeArgs = { "run", "--inspect-brk" },
-            runtimeArgs = { "run", "--inspect=127.0.0.1:9229", "--allow-all" },
-            attachSimplePort = 9229,
-          },
-          {
-            name = "Deno attach",
-            request = "attach",
-            type = "pwa-node",
-            processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
-          },
-          {
-            name = "Deno launch ?",
-            request = "launch",
-            type = "pwa-node",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
-            runtimeArgs = { "run", "--inspect-brk" },
+            runtimeArgs = {
+              "run",
+              "--inspect-wait",
+              "--allow-all",
+            },
             attachSimplePort = 9229,
           },
         }
