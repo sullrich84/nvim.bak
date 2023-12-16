@@ -236,6 +236,7 @@ local plugins = {
           " ⠀⠀⠛⠿⠿⠃⠀⠻⠿⠋⠀⠀⠻⠇⠘⠿⠿⠟⠀sully.vim ",
           "",
         },
+        disable_move = true,
         week_header = {
           enable = false,
         },
@@ -248,9 +249,6 @@ local plugins = {
           { icon = "󰚰 ", desc = "Update", group = "@comment", action = "Lazy update", key = "u" },
           { icon = "󰛯 ", desc = "Health", group = "@comment", action = "checkhealth", key = "h" },
           { icon = "󰩈 ", desc = "Quit", group = "@error", action = "qa", key = "q" },
-        },
-        packages = {
-          enabled = false,
         },
         project = {
           enable = true,
@@ -265,12 +263,10 @@ local plugins = {
           icon = "󰋚 ",
           label = " Recent files:",
         },
-        footer = function()
-          local stats = require("lazy").stats()
-          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          local footer = "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-          return { "", footer }
-        end,
+          footer = function()
+            local date = os.date("%A, %d. %B %Y %H:%M:%S")
+            return { "", date }
+          end,
       },
     },
     dependencies = {
