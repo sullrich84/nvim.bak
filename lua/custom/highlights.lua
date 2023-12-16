@@ -10,18 +10,27 @@ M.override = {
   },
 }
 
+
+
 M.add = {
   --NvimTreeOpenedFolderName = { fg = "green", bold = true },
-  DashboardHeader = { fg = "gray" },
-  DashboardFooter = { fg = "gray" },
-  DashboardShortCutIcon = { fg = "gray" },
-  DashboardFiles = { fg = "gray" },
+  DashboardHeader = { fg = "#b7bdf8" }, -- Logo
+  DashboardFooter = { fg = "#5b6078", italic = true }, -- Footer
+  -- DashboardDesc = { fg = "#5b6078" }, -- no effect
+  -- DashboardKey = { fg = "#5b6078" }, -- no effect
+  -- DashboardIcon = { fg = "#5b6078" }, -- no effect
+  DashboardShortCut = { fg = "#cad3f5" }, -- all top links and hotkeys
+  DashboardShortCutIcon = { fg = "#c6a0f6" }, -- top row icons
+  DashboardFiles = { fg = "#8087a2" }, -- all file links
   ---
-  DashboardProjectTitle = { fg = "gray" },
-  DashboardProjectTitleIcon = { fg = "gray" },
-  DashboardProjectIcon = { fg = "gray" },
-  DashboardMruTitle = { fg = "gray" },
-  DashboardMruIcon = { fg = "gray" },
+  DashboardProjectTitle = { fg = "#ee99a0", italic = true, bold = true }, -- label "recent projects"
+  DashboardProjectTitleIcon = { fg = "#ee99a0" }, -- icon "recent projects"
+  DashboardProjectIcon = { fg = "#ee99a0" }, -- link icons under "recent projects"
+  DashboardMruTitle = { fg = "#7dc4e4", italic = true, bold = true }, -- label "recent files" 
+  DashboardMruIcon = { fg = "#7dc4e4" }, -- icon "recent files"
+  --- 
+  DashboardPrimary = { fg = "#cad3f5" },
+  DashboardSecondary = { fg = "#5b6078", italic = true },
 }
 
 return M
