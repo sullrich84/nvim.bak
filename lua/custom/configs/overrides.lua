@@ -41,6 +41,12 @@ M.mason = {
 
     -- shell
     "shfmt",
+
+    --python,
+    "black",
+    "pyright",
+    "pylint",
+    "debugpy",
   },
 }
 

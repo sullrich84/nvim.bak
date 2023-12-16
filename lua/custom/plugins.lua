@@ -41,6 +41,7 @@ local plugins = {
 
   { "tommcdo/vim-exchange", lazy = false },
   { "AndrewRadev/switch.vim", lazy = false },
+  { "tribela/vim-transparent", lazy = false },
   { "AndrewRadev/sideways.vim", lazy = false },
   { "tpope/vim-surround", lazy = false },
   { "tpope/vim-speeddating", lazy = false },

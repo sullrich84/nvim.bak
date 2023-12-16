@@ -26,6 +26,9 @@ local sources = {
 
   -- shell
   b.formatting.shfmt,
+
+  -- python
+  b.formatting.black
 }
 
 null_ls.setup {
