@@ -33,12 +33,6 @@ local plugins = {
     },
   },
 
-  {
-    "chrisgrieser/nvim-alt-substitute",
-    event = "CmdlineEnter",
-    opts = true,
-  },
-
   { "tommcdo/vim-exchange", lazy = false },
   { "AndrewRadev/switch.vim", lazy = false },
   { "tribela/vim-transparent", lazy = false },
@@ -110,7 +104,7 @@ local plugins = {
             type = "pwa-node",
             program = "${file}",
             cwd = "${workspaceFolder}",
-            runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
+            -- runtimeExecutable = vim.fn.getenv "HOME" .. "/.deno/bin/deno",
             runtimeArgs = {
               "run",
               "--inspect-wait",

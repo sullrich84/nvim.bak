@@ -47,6 +47,10 @@ M.mason = {
     "pyright",
     "pylint",
     "debugpy",
+
+    --helm
+    "helm-ls",
+    "yaml-language-server",
   },
 }
 
