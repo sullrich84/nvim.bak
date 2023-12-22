@@ -1,4 +1,4 @@
--- local overrides = require "custom.configs.overrides"
+local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
@@ -31,6 +31,21 @@ local plugins = {
         },
       },
     },
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
   },
 
   { "tommcdo/vim-exchange", lazy = false },
